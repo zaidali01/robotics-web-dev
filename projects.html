@@ -9,29 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['Orbitron', 'sans-serif'],
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.8s ease-out forwards',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(10px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
     body { background-color: #050505; color: white; }
     
@@ -63,7 +40,7 @@
 
   <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
     
-    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8">
      <nav class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-3">
        <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500" xmlns="http://www.w3.org/2000/svg">
@@ -257,41 +234,6 @@
     </footer>
   </div>
 
-  <script>
-      // 1. Mobile Menu Logic
-      const btn = document.getElementById('menu-btn');
-      const menu = document.getElementById('mobile-menu');
-
-      btn.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-          menu.classList.toggle('flex');
-      });
-
-      // 2. Project Filter Logic
-      function filterProjects(category) {
-          const cards = document.querySelectorAll('.project-card');
-          const buttons = document.querySelectorAll('.filter-btn');
-
-          buttons.forEach(button => {
-              if (button.textContent.toLowerCase().includes(category) || (category === 'all' && button.textContent === 'All')) {
-                  button.classList.remove('bg-white/5', 'text-gray-400', 'border-white/10');
-                  button.classList.add('bg-blue-500', 'text-white', 'border-blue-500');
-              } else {
-                  button.classList.add('bg-white/5', 'text-gray-400', 'border-white/10');
-                  button.classList.remove('bg-blue-500', 'text-white', 'border-blue-500');
-              }
-          });
-
-          cards.forEach(card => {
-              if (category === 'all' || card.dataset.category === category) {
-                  card.style.display = 'block';
-                  card.style.opacity = '0';
-                  setTimeout(() => card.style.opacity = '1', 50);
-              } else {
-                  card.style.display = 'none';
-              }
-          });
-      }
-  </script>
+  <script src="projects.js"></script>
  </body>
 </html>
