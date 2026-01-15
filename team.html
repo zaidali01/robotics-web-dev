@@ -1,363 +1,311 @@
 <!doctype html>
 <html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | NITP Robotics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team | NITP Robotics</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="team.css">
+    body { 
+        box-sizing: border-box; 
+        background-color: #050505; 
+        color: white;
+        font-family: sans-serif;
+        overflow-x: hidden;
+    }
 
-</head>
+    /* Tech Grid Background */
+    .tech-bg {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    }
 
-<body class="h-full relative selection:bg-blue-500 selection:text-white">
+    /* Animations */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-enter { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    /* Glitch Text Effect Hover */
+    .glitch-hover:hover {
+        text-shadow: 2px 0 #00ffff, -2px 0 #ff00ff;
+    }
+  </style>
+ </head>
+ <body class="h-full relative selection:bg-blue-500 selection:text-white">
 
-    <div class="fixed inset-0 tech-bg pointer-events-none z-0"></div>
-    <div
-        class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none z-0">
-    </div>
+  <div class="fixed inset-0 tech-bg pointer-events-none z-0"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
-    <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
+  <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
+    
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8">
+     <nav class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+       <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500" xmlns="http://www.w3.org/2000/svg">
+         <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" /> 
+         <circle cx="14" cy="14" r="2" fill="currentColor" /> 
+         <circle cx="26" cy="14" r="2" fill="currentColor" /> 
+         <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> 
+         <circle cx="20" cy="4" r="2" fill="currentColor" />
+       </svg>
+       <span class="text-lg font-bold tracking-tight text-white">NITP Robotics</span>
+      </div>
 
-        <header
-            class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8">
-            <nav class="max-w-6xl mx-auto flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" />
-                        <circle cx="14" cy="14" r="2" fill="currentColor" />
-                        <circle cx="26" cy="14" r="2" fill="currentColor" />
-                        <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <circle cx="20" cy="4" r="2" fill="currentColor" />
-                    </svg>
-                    <span class="text-lg font-bold tracking-tight text-white">NITP Robotics</span>
-                </div>
+      <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
+        <a href="index.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a> 
+        <a href="about.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a> 
+        <a href="achievements.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
+        <a href="projects.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a> 
+        <a href="news.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
+        <a href="events.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
+        <a href="team.html" class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
+      </div>
+     </nav>
+    </header>
 
-                <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
-                    <a href="index.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a>
-                    <a href="about.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a>
-                    <a href="achievements.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
-                    <a href="projects.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a>
-                    <a href="news.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
-                    <a href="events.html"
-                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
-                    <a href="team.html"
-                        class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
-                </div>
-            </nav>
+    <main class="w-full flex-grow pt-32 pb-20 px-8">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16 animate-enter">
+            <h1 class="text-5xl md:text-6xl font-black mb-4 glitch-hover cursor-default transition-all">MEET THE <span class="text-blue-500">CREW</span></h1>
+            <p class="opacity-70 text-lg max-w-2xl mx-auto">The innovators, engineers, and visionaries leading NIT Patna into the future.</p>
+        </div>
 
-        </header>
-
-        <main class="w-full flex-grow pt-32 pb-20 px-8">
-            <div class="max-w-7xl mx-auto">
-
-                <div class="text-center mb-20 animate-enter">
-                    <h1 class="text-5xl md:text-6xl font-black mb-4 glitch-hover cursor-default transition-all">MEET THE
-                        <span class="text-blue-500">CREW</span></h1>
-                    <p class="opacity-70 text-lg max-w-2xl mx-auto">The innovators, engineers, and visionaries leading
-                        NIT Patna into the future.</p>
-                </div>
-
-                <div class="mb-24 animate-enter delay-100">
-                    <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
-                        Faculty Advisor
-                        <span class="h-px bg-white/10 flex-grow ml-4"></span>
-                    </h2>
-
-                    <div class="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
-                        <div class="relative group">
-                            <div
-                                class="absolute inset-0 bg-blue-600 blur-[40px] opacity-10 group-hover:opacity-20 transition-opacity">
-                            </div>
-                            <div
-                                class="relative flex flex-col sm:flex-row items-center gap-8 bg-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-blue-500/50 transition-colors z-10">
-                                <div
-                                    class="w-32 h-32 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex-shrink-0 border-4 border-[#0a0a0a] shadow-lg flex items-center justify-center text-gray-500 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                                    <img src="https://api.dicebear.com/9.x/initials/svg?seed=BG" alt="Bharat Gupta"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <div class="text-center sm:text-left">
-                                    <h3
-                                        class="text-3xl font-bold mb-1 text-white group-hover:text-blue-400 transition-colors">
-                                        Bharat Gupta</h3>
-                                    <p class="text-blue-500 text-sm font-bold uppercase tracking-widest mb-4">Faculty
-                                        Advisor</p>
-                                    <p class="text-sm opacity-60 leading-relaxed">Guiding the Robotics Club with
-                                        expertise and vision, fostering an environment of technical excellence and
-                                        innovation.</p>
-                                </div>
-                            </div>
+        <div class="mb-24 animate-enter delay-100">
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
+                Faculty Advisor
+                <span class="h-px bg-white/10 flex-grow ml-4"></span>
+            </h2>
+            
+            <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-blue-600 blur-[50px] opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
+                    <div class="relative flex flex-col sm:flex-row items-center gap-8 bg-[#0a0a0a] p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors z-10 shadow-xl">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex-shrink-0 border-4 border-[#0a0a0a] shadow-lg flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                             <img src="images/team/faculty advisor/Bharat.jpg" alt="Bharat Gupta" class="w-full h-full object-cover">
+                        </div> 
+                        <div class="text-center sm:text-left">
+                            <h3 class="text-3xl font-bold mb-1 text-white group-hover:text-blue-400 transition-colors">Bharat Gupta</h3>
+                            <p class="text-blue-500 text-sm font-bold uppercase tracking-widest mb-4">Faculty Advisor</p>
+                            <p class="text-sm opacity-60 leading-relaxed max-w-xl">"Innovation is the bridge between imagination and reality." <br>Guiding the Robotics Club with expertise and vision, fostering an environment of technical excellence.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="mb-20 animate-enter delay-200">
-                    <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
-                        Core Team
-                        <span class="h-px bg-white/10 flex-grow ml-4"></span>
-                    </h2>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-
-                        <div
-                            class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-6 border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors overflow-hidden flex items-center justify-center relative">
-                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=Dharshan&backgroundColor=c0aede"
-                                    alt="Dharshan" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-                                Dharshan Jain</h3>
-                            <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest mb-4">President</p>
-                        </div>
-
-                        <div
-                            class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-6 border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors overflow-hidden flex items-center justify-center relative">
-                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=Deepu&backgroundColor=ffdfbf"
-                                    alt="Deepu" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Deepu
-                                Kumar Gupta</h3>
-                            <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest mb-4">Captain</p>
-                        </div>
-
-                        <div
-                            class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-6 border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors overflow-hidden flex items-center justify-center relative">
-                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=Kapish&backgroundColor=b6e3f4"
-                                    alt="Kapish" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Kapish
-                                Varshney</h3>
-                            <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest mb-4">Vice Captain
-                            </p>
-                        </div>
+        <div class="mb-20 animate-enter delay-200">
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
+                Executive Board
+                <span class="h-px bg-white/10 flex-grow ml-4"></span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 mb-5 border-2 border-blue-500/30 group-hover:border-blue-500 transition-all overflow-hidden relative">
+                        <img src="images/team/core team/president.jpg" alt="Dharshan" class="w-full h-full object-cover">
                     </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6 lg:max-w-2xl lg:mx-auto">
-                        <div
-                            class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-6 border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors overflow-hidden flex items-center justify-center relative">
-                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=Niharika&backgroundColor=ffd5dc"
-                                    alt="Niharika" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Rathod
-                                Niharika</h3>
-                            <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest mb-4">Secretary</p>
-                        </div>
-
-                        <div
-                            class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-6 border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors overflow-hidden flex items-center justify-center relative">
-                                <img src="https://api.dicebear.com/9.x/micah/svg?seed=Vimlesh&backgroundColor=d1d4f9"
-                                    alt="Vimlesh" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Vimlesh
-                                Meena</h3>
-                            <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest mb-4">Joint
-                                Secretary</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">Dharshan Jain</h3>
+                    <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest">President</p>
                 </div>
 
-                <div class="mb-20 animate-enter delay-300">
-                    <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
-                        Team Leads & Members
-                        <span class="h-px bg-white/10 flex-grow ml-4"></span>
-                    </h2>
-
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Aryansh"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Aryansh Gupta</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Technical Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Ankur"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Ankur N. Singh</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Project Mgmt Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Ritik"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Ritik Jha</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Project Mgmt Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Suraj"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Suraj Kumar</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Graphics Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=AnjaliRaj"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Anjali Raj</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Graphics Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Lipi"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Lipi Aditi</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Web Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Nandani"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Nandani Kumari</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">PR & Promo Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Ankit"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Ankit Kumar</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Content Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Shrishti"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Shrishti Kumari</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Content Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Raja"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Raja Kumar</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Event Mgmt Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Shivangi"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Shivangi Singh</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Member Dev Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Khushi"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Khushi Verma</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">3D/CAD Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Krishna"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Krishna K. Verma</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Media Lead</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/30 transition-all group flex items-center gap-4">
-                            <img src="https://api.dicebear.com/9.x/micah/svg?seed=Aman"
-                                class="w-12 h-12 rounded-full bg-gray-800 grayscale group-hover:grayscale-0 transition-all">
-                            <div class="text-left">
-                                <h4 class="text-sm font-bold text-white">Aman Keshri</h4>
-                                <p class="text-[10px] text-blue-400 uppercase tracking-wider">Core Member</p>
-                            </div>
-                        </div>
-
+                <div class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 mb-5 border-2 border-blue-500/30 group-hover:border-blue-500 transition-all overflow-hidden relative">
+                        <img src="images/team/core team/captain.jpg" alt="Deepu" class="w-full h-full object-cover">
                     </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">Deepu Kumar Gupta</h3>
+                    <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest">Captain</p>
                 </div>
 
-                <div class="border-t border-white/10 pt-16 text-center animate-enter delay-300">
-                    <h3 class="text-3xl font-bold mb-4">Want to be on this page?</h3>
-                    <p class="opacity-70 mb-8">We recruit new members at the start of every academic year.</p>
-                    <a href="contact.html"
-                        class="inline-block border border-blue-500 text-blue-400 px-8 py-3 rounded hover:bg-blue-500 hover:text-white transition-all font-bold shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]">Contact
-                        Us</a>
+                <div class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 mb-5 border-2 border-blue-500/30 group-hover:border-blue-500 transition-all overflow-hidden relative">
+                        <img src="images/team/core team/vice captain.jpg" alt="Kapish" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">Kapish Varshney</h3>
+                    <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest">Vice Captain</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 mb-5 border-2 border-blue-500/30 group-hover:border-blue-500 transition-all overflow-hidden relative">
+                        <img src="images/team/core team/secreatary.jpg" alt="Niharika" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">Rathod Niharika</h3>
+                    <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest">Secretary</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-6 rounded-xl border border-white/10 text-center hover:bg-white/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden shadow-lg">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 mb-5 border-2 border-blue-500/30 group-hover:border-blue-500 transition-all overflow-hidden relative">
+                        <img src="images/team/core team/joint secretary.jpg" alt="Vimlesh" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">Vimlesh Meena</h3>
+                    <p class="text-blue-500 text-[11px] font-bold uppercase tracking-widest">Joint Secretary</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20 animate-enter delay-300">
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4 flex items-center gap-2">
+                Team Leads & Members
+                <span class="h-px bg-white/10 flex-grow ml-4"></span>
+            </h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div
+                    class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div
+                        class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t7 tech lead.jpg"
+                            class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Aman Keshri</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Technical Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t8 tech lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Aryansh Gupta</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Technical Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t9 project management.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Ankur N. Singh</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Project Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t10 project management.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Ritik Jha</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Project Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t11 graphic.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Suraj Kumar</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Graphics Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t12 graphics.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Anjali Raj</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Graphics Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t13 web lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Lipi Aditi</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Web Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t14 pr lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Nandani Kumari</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">PR Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t15 content lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Ankit Kumar</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Content Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t16 content lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Shrishti Kumari</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Content Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t17 event management.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Raja Kumar</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Event Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t18 member dev lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Shivangi Singh</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Member Dev</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t19 3d and cad lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Khushi Verma</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">3D/CAD Lead</p>
+                </div>
+
+                <div class="group bg-[#0a0a0a] p-5 rounded-lg border border-white/10 text-center hover:bg-white/5 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gray-800 mb-4 border border-white/10 group-hover:border-blue-500 transition-colors overflow-hidden">
+                        <img src="images/team/t20 vid and media lead.jpg" class="w-full h-full object-cover transition-all duration-500">
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Krishna K. Verma</h4>
+                    <p class="text-blue-400 text-[9px] font-bold uppercase tracking-widest">Media Lead</p>
                 </div>
 
             </div>
-        </main>
+        </div>
 
-        <footer class="w-full py-10 px-8 text-center border-t border-white/5 bg-[#0a0a0a]">
-            <div class="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto gap-4">
-                <p class="opacity-30 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
-                <div class="flex gap-4 opacity-40 text-xs uppercase tracking-widest">
-                    <a href="#" class="hover:text-blue-500 transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-blue-500 transition-colors">LinkedIn</a>
-                </div>
+        <div class="border-t border-white/10 pt-16 text-center animate-enter delay-300">
+             <h3 class="text-3xl font-bold mb-4">Want to be on this page?</h3>
+             <p class="opacity-70 mb-8">We recruit new members at the start of every academic year.</p>
+             <a href="contact.html" class="inline-block border border-blue-500 text-blue-400 px-8 py-3 rounded hover:bg-blue-500 hover:text-white transition-all font-bold shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)]">Contact Us</a>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="w-full py-10 px-8 text-center border-t border-white/5 bg-[#0a0a0a]">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto gap-4">
+            <p class="opacity-30 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
+            <div class="flex gap-4 opacity-40 text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-blue-500 transition-colors">Instagram</a>
+                <a href="#" class="hover:text-blue-500 transition-colors">LinkedIn</a>
             </div>
-        </footer>
-    </div>
-</body>
-
+        </div>
+    </footer>
+  </div>
+ </body>
 </html>
