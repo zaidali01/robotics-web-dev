@@ -1,112 +1,228 @@
 <!doctype html>
 <html lang="en" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | NITP Robotics</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="events.css">
+ </head>
+ <body class="h-full relative selection:bg-blue-500 selection:text-white">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Upcoming robotics workshops, hackathons, and competitions at NIT Patna.">
-    <title>Events | NITP Robotics</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="index.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
-        rel="stylesheet">
-</head>
+  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
 
-<body class="h-full text-white font-sans bg-[#0a0a0a]">
-    <div id="app-wrapper" class="w-full h-full flex flex-col justify-between">
+  <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
+    
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8 transition-all duration-300">
+     <nav class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+       <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500" xmlns="http://www.w3.org/2000/svg">
+         <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" /> 
+         <circle cx="14" cy="14" r="2" fill="currentColor" /> 
+         <circle cx="26" cy="14" r="2" fill="currentColor" /> 
+         <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> 
+         <circle cx="20" cy="4" r="2" fill="currentColor" />
+       </svg>
+       <span class="text-lg font-bold tracking-tight text-white">NITP Robotics</span>
+      </div>
 
-        <header
-            class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8">
-            <nav class="max-w-6xl mx-auto flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" />
-                        <circle cx="14" cy="14" r="2" fill="currentColor" />
-                        <circle cx="26" cy="14" r="2" fill="currentColor" />
-                        <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <circle cx="20" cy="4" r="2" fill="currentColor" />
-                    </svg>
-                    <span class="text-lg font-bold tracking-tight">NITP Robotics</span>
-                </div>
+      <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
+        <a href="index.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a> 
+        <a href="about.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a> 
+        <a href="achievements.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
+        <a href="projects.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a> 
+        <a href="news.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
+        <a href="events.html" class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
+        <a href="team.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
+      </div>
 
-                <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
-                    <a href="index.html"
-                        class="transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a>
-                    <a href="about.html"
-                        class="transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a>
-                    <a href="achievements.html"
-                        class="transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
-                    <a href="projects.html"
-                        class="transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a>
-                    <a href="news.html" class="transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
-                    <a href="events.html"
-                        class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
-                    <a href="team.html" class="transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
-                </div>
+      <button id="menu-btn" class="lg:hidden text-white hover:text-blue-500 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+     </nav>
 
-                <button id="menu-btn" class="lg:hidden text-white hover:text-blue-500 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </nav>
+     <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/10 lg:hidden flex-col items-center py-6 gap-6 text-sm font-bold uppercase tracking-widest shadow-2xl">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="events.html" class="text-blue-400">Events</a>
+        <a href="team.html" class="hover:text-blue-400">Team</a>
+     </div>
+    </header>
 
-            <div id="mobile-menu"
-                class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/10 lg:hidden flex-col items-center py-6 gap-6 text-sm font-bold uppercase tracking-widest shadow-2xl">
-                <a href="index.html" class="hover:text-blue-400">Home</a>
-                <a href="about.html" class="hover:text-blue-400">About</a>
-                <a href="achievements.html" class="hover:text-blue-400">Achievements</a>
-                <a href="projects.html" class="hover:text-blue-400">Projects</a>
-                <a href="news.html" class="hover:text-blue-400">News</a>
-                <a href="events.html" class="text-blue-400">Events</a>
-                <a href="team.html" class="hover:text-blue-400">Team</a>
+    <main class="w-full flex-grow pt-28 pb-20 px-6">
+      
+      <section class="max-w-7xl mx-auto mb-20 animate-fade-in-up">
+        <div class="relative w-full rounded-2xl overflow-hidden border border-blue-500/30 group">
+            
+            <div class="absolute inset-0">
+                <img src="robowar.jpeg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Robowars">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent"></div>
             </div>
-        </header>
 
-        <main class="w-full h-full flex items-center justify-center pt-24 min-h-[60vh]">
-            <div class="text-center px-6">
-                <h1
-                    class="text-4xl md:text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                    Events Coming Soon</h1>
-                <p class="text-gray-400 max-w-lg mx-auto mb-8">We are planning something big! Stay tuned for updates on
-                    Induction 2026 and Winter Workshops.</p>
-                <a href="index.html"
-                    class="border border-white/20 px-8 py-3 rounded-md font-bold transition-all hover:bg-white hover:text-black">Back
-                    Home</a>
-            </div>
-        </main>
-
-        <footer class="w-full py-12 px-8 border-t border-white/5 bg-[#050505] relative z-20">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2">
-                    <span class="text-lg font-mono font-bold text-white">NITP <span
-                            class="text-blue-500">ROBO</span></span>
+            <div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12">
+                
+                <div class="max-w-xl">
+                    <div class="inline-flex items-center gap-2 mb-4">
+                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        <span class="text-red-400 font-mono text-xs font-bold uppercase tracking-widest">Flagship Event</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-mono font-black text-white mb-6 leading-tight">ROBO<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">WARS</span> <span class="text-white/20">2026</span></h1>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        The ultimate combat robotics showdown. Witness 30kg and 60kg bots clash for supremacy in the cage. Metal will bend, sparks will fly.
+                    </p>
+                    <div class="flex gap-4">
+                        <button class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)]">Register Bot</button>
+                        <button class="border border-white/20 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest transition-all">Rulebook</button>
+                    </div>
                 </div>
-                <p class="opacity-40 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
-                <div class="flex gap-6 items-center">
-                    <a href="#" class="text-pink-500 hover:text-pink-400 transition-all duration-300 hover:scale-125">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-3.77 1.762c-3.262.15-5.048 1.938-5.2 5.2v1.549c.152 3.263 1.938 5.049 5.2 5.2h1.549c3.263-.151 5.049-1.937 5.2-5.2V8.962c-.151-3.263-1.937-5.049-5.2-5.2h-1.549zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <a href="#" class="text-blue-500 hover:text-blue-400 transition-all duration-300 hover:scale-125">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </a>
+
+                <div class="flex gap-4">
+                    <div class="countdown-box p-4 rounded-xl text-center w-20 md:w-24">
+                        <span class="block text-3xl md:text-4xl font-mono font-bold text-white">15</span>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Days</span>
+                    </div>
+                    <div class="countdown-box p-4 rounded-xl text-center w-20 md:w-24">
+                        <span class="block text-3xl md:text-4xl font-mono font-bold text-white">08</span>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Hours</span>
+                    </div>
+                    <div class="countdown-box p-4 rounded-xl text-center w-20 md:w-24">
+                        <span class="block text-3xl md:text-4xl font-mono font-bold text-white">45</span>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400">Mins</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </section>
+
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="mb-12 border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between items-end gap-4 animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div>
+                <h2 class="text-4xl font-mono font-bold mb-2">UPCOMING <span class="text-blue-500">SCHEDULE</span></h2>
+                <p class="opacity-60 font-mono text-sm tracking-wide">SYNC YOUR CALENDARS.</p>
+            </div>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-bold uppercase tracking-widest flex items-center gap-2 transition-colors">
+                View Past Events <span class="text-blue-500">→</span>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="event-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300 group flex flex-col animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555679427-1f6dfcce943b?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Arduino">
+                    <div class="absolute inset-0 bg-green-900/30"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-lg p-2 text-center min-w-[60px]">
+                        <span class="block text-xl font-bold font-mono text-white">20</span>
+                        <span class="block text-[10px] font-bold uppercase tracking-wider text-green-400">Feb</span>
+                    </div>
+                </div>
+                
+                <div class="p-6 flex-grow flex flex-col">
+                    <span class="text-green-400 text-xs font-bold uppercase tracking-[0.2em] mb-3">Workshop</span>
+                    <h3 class="text-2xl font-bold mb-4 font-mono group-hover:text-green-400 transition-colors">Arduino Masterclass</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                             <span>02:00 PM - 05:00 PM</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                             <span>Electronics Lab 204</span>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-auto w-full py-3 border border-white/10 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-green-600 hover:border-green-600 hover:text-white transition-all">Details</button>
                 </div>
             </div>
-        </footer>
-    </div>
-    <script src="index.js"></script>
-</body>
 
+            <div class="event-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group flex flex-col animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="AI">
+                    <div class="absolute inset-0 bg-purple-900/30"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-lg p-2 text-center min-w-[60px]">
+                        <span class="block text-xl font-bold font-mono text-white">05</span>
+                        <span class="block text-[10px] font-bold uppercase tracking-wider text-purple-400">Mar</span>
+                    </div>
+                </div>
+                
+                <div class="p-6 flex-grow flex flex-col">
+                    <span class="text-purple-400 text-xs font-bold uppercase tracking-[0.2em] mb-3">Guest Lecture</span>
+                    <h3 class="text-2xl font-bold mb-4 font-mono group-hover:text-purple-400 transition-colors">Future of AI Robotics</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                             <span>11:00 AM - 01:00 PM</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                             <span>Main Seminar Hall</span>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-auto w-full py-3 border border-white/10 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-purple-600 hover:border-purple-600 hover:text-white transition-all">RSVP Now</button>
+                </div>
+            </div>
+
+            <div class="event-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 group flex flex-col animate-fade-in-up" style="animation-delay: 0.4s;">
+                <div class="h-48 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Hackathon">
+                    <div class="absolute inset-0 bg-pink-900/30"></div>
+                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-lg p-2 text-center min-w-[60px]">
+                        <span class="block text-xl font-bold font-mono text-white">12</span>
+                        <span class="block text-[10px] font-bold uppercase tracking-wider text-pink-400">Mar</span>
+                    </div>
+                </div>
+                
+                <div class="p-6 flex-grow flex flex-col">
+                    <span class="text-pink-400 text-xs font-bold uppercase tracking-[0.2em] mb-3">Hackathon</span>
+                    <h3 class="text-2xl font-bold mb-4 font-mono group-hover:text-pink-400 transition-colors">Electro-Hack 3.0</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                             <span>24 Hours Non-Stop</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-400">
+                             <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                             <span>Incubation Center</span>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-auto w-full py-3 border border-white/10 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-pink-600 hover:border-pink-600 hover:text-white transition-all">Register Team</button>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full py-12 px-8 border-t border-white/5 bg-[#050505] relative z-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                 <span class="text-lg font-mono font-bold text-white">NITP <span class="text-blue-500">ROBO</span></span>
+            </div>
+            <p class="opacity-40 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
+            <div class="flex gap-6 items-center">
+                <a href="#" class="text-pink-500 hover:text-pink-400 transition-all duration-300 hover:scale-125">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-3.77 1.762c-3.262.15-5.048 1.938-5.2 5.2v1.549c.152 3.263 1.938 5.049 5.2 5.2h1.549c3.263-.151 5.049-1.937 5.2-5.2V8.962c-.151-3.263-1.937-5.049-5.2-5.2h-1.549zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-400 transition-all duration-300 hover:scale-125">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+  </div>
+  
+ </body>
 </html>
