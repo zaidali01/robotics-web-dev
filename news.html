@@ -1,231 +1,326 @@
 <!doctype html>
 <html lang="en" class="h-full scroll-smooth">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News | NITP Robotics</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script src="news.js" defer></script>
 
-  <link rel="stylesheet" href="news.css">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
- </head>
- 
- <body class="h-full relative selection:bg-blue-500 selection:text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | NITP Robotics</title>
 
-  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
-    
-    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8 transition-all duration-300">
-     <nav class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-3">
-       <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500" xmlns="http://www.w3.org/2000/svg">
-         <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" /> 
-         <circle cx="14" cy="14" r="2" fill="currentColor" /> 
-         <circle cx="26" cy="14" r="2" fill="currentColor" /> 
-         <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> 
-         <circle cx="20" cy="4" r="2" fill="currentColor" />
-       </svg>
-       <span class="text-lg font-bold tracking-tight text-white">NITP Robotics</span>
-      </div>
+    <script src="news.js" defer></script>
 
-      <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
-        <a href="index.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a> 
-        <a href="about.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a> 
-        <a href="achievements.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
-        <a href="projects.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a> 
-        <a href="news.html" class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
-        <a href="events.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
-        <a href="team.html" class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
-      </div>
+    <link rel="stylesheet" href="news.css">
 
-      <button id="menu-btn" class="lg:hidden text-white hover:text-blue-500 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-     </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
 
-     <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/10 lg:hidden flex-col items-center py-6 gap-6 text-sm font-bold uppercase tracking-widest shadow-2xl">
-        <a href="index.html" class="hover:text-blue-400">Home</a>
-        <a href="achievements.html" class="hover:text-blue-400">Achievements</a>
-        <a href="projects.html" class="hover:text-blue-400">Projects</a>
-        <a href="news.html" class="text-blue-400">News</a>
-     </div>
-    </header>
+<body class="h-full relative selection:bg-blue-500 selection:text-white">
 
-    <main class="w-full flex-grow pt-28 pb-20 px-6">
-      
-      <section class="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-12 max-w-7xl mx-auto flex items-center justify-center animate-fade-in-up">
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" 
-             alt="Tech News Background" 
-             class="absolute inset-0 w-full h-full object-cover opacity-50">
-        
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
 
-        <div class="relative z-10 text-center">
-            <div class="inline-block mb-3 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-[0.3em] backdrop-blur-md">Club Chronicles</div>
-            <h1 class="text-5xl md:text-7xl font-mono font-black text-white tracking-tighter drop-shadow-2xl">
-                TRANSMISSIONS
-            </h1>
-        </div>
-      </section>
+    <div id="app-wrapper" class="flex flex-col min-h-screen relative z-10">
 
-      <div class="max-w-7xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-12 border-b border-white/10 pb-6 animate-fade-in-up" style="animation-delay: 0.1s;">
-            <div class="flex gap-2 overflow-x-auto w-full md:w-auto no-scrollbar">
-                <button class="px-4 py-2 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider">All Updates</button>
-                <button class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-blue-500/50 transition-all text-xs font-bold uppercase tracking-wider">Recruitment</button>
-                <button class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-green-500/50 transition-all text-xs font-bold uppercase tracking-wider">Achievements</button>
-                <button class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-purple-500/50 transition-all text-xs font-bold uppercase tracking-wider">Workshops</button>
-            </div>
-
-            <div class="relative w-full md:w-64">
-                <input type="text" placeholder="SEARCH DATABASE..." class="search-input w-full bg-[#0a0a0a] border border-white/20 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-gray-600 font-mono">
-                <svg class="w-4 h-4 absolute right-3 top-2.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="news-card lg:col-span-2 group relative bg-gradient-to-br from-blue-900/20 to-black border border-blue-500/30 rounded-2xl overflow-hidden transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s;">
-                <div class="absolute inset-0 bg-blue-600/5 group-hover:bg-blue-600/10 transition-colors"></div>
-                <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <svg class="w-32 h-32 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <header
+            class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/5 py-4 px-8 border-white/5 py-4 px-8 transition-all duration-300">
+            <nav class="max-w-6xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <svg width="32" height="32" viewbox="0 0 40 40" fill="none" class="text-blue-500"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2" />
+                        <circle cx="14" cy="14" r="2" fill="currentColor" />
+                        <circle cx="26" cy="14" r="2" fill="currentColor" />
+                        <path d="M15 24 Q20 28 25 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="20" cy="4" r="2" fill="currentColor" />
+                    </svg>
+                    <span class="text-lg font-bold tracking-tight text-white">NITP Robotics</span>
                 </div>
-                
-                <div class="flex flex-col md:flex-row h-full">
-                    <div class="md:w-32 bg-blue-600/20 backdrop-blur-sm border-r border-blue-500/20 flex flex-col items-center justify-center p-6 text-center">
-                        <span class="text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Latest</span>
-                        <span class="text-4xl font-black text-white font-mono">10</span>
-                        <span class="text-lg font-bold text-white/80 uppercase">JAN</span>
-                        <div class="h-0.5 w-8 bg-blue-500 mt-2"></div>
+
+                <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <a href="index.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Home</a>
+                    <a href="about.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">About</a>
+                    <a href="achievements.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Achievements</a>
+                    <a href="projects.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Projects</a>
+                    <a href="news.html"
+                        class="text-blue-400 scale-110 transition-all duration-300 hover:scale-125 hover:text-blue-400">News</a>
+                    <a href="events.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Events</a>
+                    <a href="team.html"
+                        class="text-white transition-all duration-300 hover:scale-125 hover:text-blue-400">Team</a>
+                </div>
+
+                <button id="menu-btn" class="lg:hidden text-white hover:text-blue-500 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-white/10 lg:hidden flex-col items-center py-6 gap-6 text-sm font-bold uppercase tracking-widest shadow-2xl">
+                <a href="index.html" class="hover:text-blue-400">Home</a>
+                <a href="about.html" class="hover:text-blue-400">About</a>
+                <a href="achievements.html" class="hover:text-blue-400">Achievements</a>
+                <a href="projects.html" class="hover:text-blue-400">Projects</a>
+                <a href="news.html" class="hover:text-blue-400">News</a>
+                <a href="events.html" class="hover:text-blue-400">Events</a>
+                <a href="team.html" class="hover:text-blue-400">Team</a>
+            </div>
+        </header>
+
+        <main class="w-full flex-grow pt-28 pb-20 px-6">
+
+            <section
+                class="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-12 max-w-7xl mx-auto flex items-center justify-center animate-fade-in-up">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+                    alt="Tech News Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
+
+                <div class="relative z-10 text-center">
+                    <div
+                        class="inline-block mb-3 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-[0.3em] backdrop-blur-md">
+                        Club Chronicles</div>
+                    <h1 class="text-5xl md:text-7xl font-mono font-black text-white tracking-tighter drop-shadow-2xl">
+                        TRANSMISSIONS
+                    </h1>
+                </div>
+            </section>
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-12 border-b border-white/10 pb-6 animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex gap-2 overflow-x-auto w-full md:w-auto no-scrollbar">
+                        <button
+                            class="px-4 py-2 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider">All
+                            Updates</button>
+                        <button
+                            class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-blue-500/50 transition-all text-xs font-bold uppercase tracking-wider">Recruitment</button>
+                        <button
+                            class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-green-500/50 transition-all text-xs font-bold uppercase tracking-wider">Achievements</button>
+                        <button
+                            class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-purple-500/50 transition-all text-xs font-bold uppercase tracking-wider">Workshops</button>
                     </div>
-                    
-                    <div class="p-8 flex flex-col justify-center relative z-10">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.5)]">Recruitment</span>
-                            <span class="text-gray-400 text-xs flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                2 min read
-                            </span>
+
+                    <div class="relative w-full md:w-64">
+                        <input type="text" placeholder="SEARCH DATABASE..."
+                            class="search-input w-full bg-[#0a0a0a] border border-white/20 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-gray-600 font-mono">
+                        <svg class="w-4 h-4 absolute right-3 top-2.5 text-gray-500" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="news-card lg:col-span-2 group relative bg-gradient-to-br from-blue-900/20 to-black border border-blue-500/30 rounded-2xl overflow-hidden transition-all duration-300 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        <div class="absolute inset-0 bg-blue-600/5 group-hover:bg-blue-600/10 transition-colors"></div>
+                        <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                            <svg class="w-32 h-32 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                            </svg>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white font-mono group-hover:text-blue-400 transition-colors">Inductions for Batch '29 Declared</h3>
-                        <p class="text-gray-300 mb-6 leading-relaxed">The results for the first round of inductions are out. All selected candidates have received an email regarding the interview schedule. The technical round begins next Monday.</p>
-                        <a href="#" class="inline-flex items-center gap-2 text-white font-bold bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 px-4 py-2 rounded-lg transition-all w-fit">
-                            Check Results <span class="text-lg">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/50 transition-all duration-300 flex flex-col animate-fade-in-up" style="animation-delay: 0.3s;">
-                <div class="h-2 bg-yellow-500 w-full"></div>
-                <div class="p-6 flex-grow">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="flex flex-col">
-                             <span class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-yellow-500/10 transition-colors">02</span>
-                             <span class="text-yellow-400 text-[10px] font-bold uppercase tracking-widest border border-yellow-400/30 px-2 py-1 rounded w-fit mb-2">Victory</span>
+                        <div class="flex flex-col md:flex-row h-full">
+                            <div
+                                class="md:w-32 bg-blue-600/20 backdrop-blur-sm border-r border-blue-500/20 flex flex-col items-center justify-center p-6 text-center">
+                                <span
+                                    class="text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Latest</span>
+                                <span class="text-4xl font-black text-white font-mono">10</span>
+                                <span class="text-lg font-bold text-white/80 uppercase">JAN</span>
+                                <div class="h-0.5 w-8 bg-blue-500 mt-2"></div>
+                            </div>
+
+                            <div class="p-8 flex flex-col justify-center relative z-10">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span
+                                        class="bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.5)]">Recruitment</span>
+                                    <span class="text-gray-400 text-xs flex items-center gap-1">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        2 min read
+                                    </span>
+                                </div>
+                                <h3
+                                    class="text-3xl font-bold mb-4 text-white font-mono group-hover:text-blue-400 transition-colors">
+                                    Inductions for Batch '29 Declared</h3>
+                                <p class="text-gray-300 mb-6 leading-relaxed">The results for the first round of
+                                    inductions are out. All selected candidates have received an email regarding the
+                                    interview schedule. The technical round begins next Monday.</p>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-white font-bold bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 px-4 py-2 rounded-lg transition-all w-fit">
+                                    Check Results <span class="text-lg">→</span>
+                                </a>
+                            </div>
                         </div>
-                        <span class="text-xs font-mono text-gray-500">24 DEC 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white font-mono group-hover:text-yellow-400 transition-colors">Gold at TechSagar 2025</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Our team 'RoboWarriors' secured the 1st position in the Maze Solver competition held at IIT Patna, beating 20+ teams.</p>
-                </div>
-                <div class="px-6 pb-6 mt-auto">
-                     <a href="#" class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">Read More <span class="text-yellow-500">→</span></a>
-                </div>
-            </div>
 
-            <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 flex flex-col animate-fade-in-up" style="animation-delay: 0.4s;">
-                <div class="h-2 bg-purple-500 w-full"></div>
-                <div class="p-6 flex-grow">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="flex flex-col">
-                             <span class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-purple-500/10 transition-colors">03</span>
-                             <span class="text-purple-400 text-[10px] font-bold uppercase tracking-widest border border-purple-400/30 px-2 py-1 rounded w-fit mb-2">Workshop</span>
+                    <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/50 transition-all duration-300 flex flex-col animate-fade-in-up"
+                        style="animation-delay: 0.3s;">
+                        <div class="h-2 bg-yellow-500 w-full"></div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-yellow-500/10 transition-colors">02</span>
+                                    <span
+                                        class="text-yellow-400 text-[10px] font-bold uppercase tracking-widest border border-yellow-400/30 px-2 py-1 rounded w-fit mb-2">Victory</span>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">24 DEC 2025</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold mb-3 text-white font-mono group-hover:text-yellow-400 transition-colors">
+                                Gold at TechSagar 2025</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">Our team 'RoboWarriors' secured the
+                                1st position in the Maze Solver competition held at IIT Patna, beating 20+ teams.</p>
                         </div>
-                        <span class="text-xs font-mono text-gray-500">05 DEC 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white font-mono group-hover:text-purple-400 transition-colors">Winter IoT Bootcamp</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Over 150 first-year students participated in our week-long boot camp covering Arduino, ESP32, and Cloud integration.</p>
-                </div>
-                <div class="px-6 pb-6 mt-auto">
-                     <a href="#" class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">View Gallery <span class="text-purple-500">→</span></a>
-                </div>
-            </div>
-
-            <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300 flex flex-col animate-fade-in-up" style="animation-delay: 0.5s;">
-                <div class="h-2 bg-green-500 w-full"></div>
-                <div class="p-6 flex-grow">
-                    <div class="flex justify-between items-start mb-4">
-                         <div class="flex flex-col">
-                             <span class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-green-500/10 transition-colors">04</span>
-                             <span class="text-green-400 text-[10px] font-bold uppercase tracking-widest border border-green-400/30 px-2 py-1 rounded w-fit mb-2">Funding</span>
+                        <div class="px-6 pb-6 mt-auto">
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">Read
+                                More <span class="text-yellow-500">→</span></a>
                         </div>
-                        <span class="text-xs font-mono text-gray-500">12 NOV 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white font-mono group-hover:text-green-400 transition-colors">Lab Upgraded</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">The club has procured 5 new Bambu Lab 3D printers and a high-precision CNC machine for the fabrication lab.</p>
-                </div>
-                <div class="px-6 pb-6 mt-auto">
-                     <a href="#" class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">See Specs <span class="text-green-500">→</span></a>
-                </div>
-            </div>
 
-             <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 flex flex-col animate-fade-in-up" style="animation-delay: 0.6s;">
-                <div class="h-2 bg-pink-500 w-full"></div>
-                <div class="p-6 flex-grow">
-                    <div class="flex justify-between items-start mb-4">
-                         <div class="flex flex-col">
-                             <span class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-pink-500/10 transition-colors">05</span>
-                             <span class="text-pink-400 text-[10px] font-bold uppercase tracking-widest border border-pink-400/30 px-2 py-1 rounded w-fit mb-2">Event</span>
+                    <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 flex flex-col animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        <div class="h-2 bg-purple-500 w-full"></div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-purple-500/10 transition-colors">03</span>
+                                    <span
+                                        class="text-purple-400 text-[10px] font-bold uppercase tracking-widest border border-purple-400/30 px-2 py-1 rounded w-fit mb-2">Workshop</span>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">05 DEC 2025</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold mb-3 text-white font-mono group-hover:text-purple-400 transition-colors">
+                                Winter IoT Bootcamp</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">Over 150 first-year students
+                                participated in our week-long boot camp covering Arduino, ESP32, and Cloud integration.
+                            </p>
                         </div>
-                        <span class="text-xs font-mono text-gray-500">20 OCT 2025</span>
+                        <div class="px-6 pb-6 mt-auto">
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">View
+                                Gallery <span class="text-purple-500">→</span></a>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white font-mono group-hover:text-pink-400 transition-colors">Robo-Soccer Cup</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4">The intra-college Robo-Soccer tournament saw fierce competition. Team 'Strikers' took home the trophy.</p>
+
+                    <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300 flex flex-col animate-fade-in-up"
+                        style="animation-delay: 0.5s;">
+                        <div class="h-2 bg-green-500 w-full"></div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-green-500/10 transition-colors">04</span>
+                                    <span
+                                        class="text-green-400 text-[10px] font-bold uppercase tracking-widest border border-green-400/30 px-2 py-1 rounded w-fit mb-2">Funding</span>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">12 NOV 2025</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold mb-3 text-white font-mono group-hover:text-green-400 transition-colors">
+                                Lab Upgraded</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">The club has procured 5 new Bambu Lab
+                                3D printers and a high-precision CNC machine for the fabrication lab.</p>
+                        </div>
+                        <div class="px-6 pb-6 mt-auto">
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">See
+                                Specs <span class="text-green-500">→</span></a>
+                        </div>
+                    </div>
+
+                    <div class="news-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 flex flex-col animate-fade-in-up"
+                        style="animation-delay: 0.6s;">
+                        <div class="h-2 bg-pink-500 w-full"></div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-4xl font-black text-white/10 font-mono absolute right-4 top-4 group-hover:text-pink-500/10 transition-colors">05</span>
+                                    <span
+                                        class="text-pink-400 text-[10px] font-bold uppercase tracking-widest border border-pink-400/30 px-2 py-1 rounded w-fit mb-2">Event</span>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">20 OCT 2025</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold mb-3 text-white font-mono group-hover:text-pink-400 transition-colors">
+                                Robo-Soccer Cup</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">The intra-college Robo-Soccer
+                                tournament saw fierce competition. Team 'Strikers' took home the trophy.</p>
+                        </div>
+                        <div class="px-6 pb-6 mt-auto">
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">Highlights
+                                <span class="text-pink-500">→</span></a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="px-6 pb-6 mt-auto">
-                     <a href="#" class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">Highlights <span class="text-pink-500">→</span></a>
+
+                <div class="mt-16 text-center animate-fade-in-up" style="animation-delay: 0.7s;">
+                    <button
+                        class="group px-8 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all font-bold text-xs uppercase tracking-[0.2em] relative overflow-hidden">
+                        <span class="relative z-10">Access Archives</span>
+                        <div
+                            class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out">
+                        </div>
+                    </button>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="w-full py-12 px-8 border-t border-white/5 bg-[#050505] relative z-20">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg font-mono font-bold text-white">NITP <span
+                            class="text-blue-500">ROBO</span></span>
+                </div>
+
+                <p class="opacity-40 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
+
+                <div class="flex gap-6 items-center">
+                    <a href="#" class="text-pink-500 hover:text-pink-400 transition-all duration-300 hover:scale-125">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-3.77 1.762c-3.262.15-5.048 1.938-5.2 5.2v1.549c.152 3.263 1.938 5.049 5.2 5.2h1.549c3.263-.151 5.049-1.937 5.2-5.2V8.962c-.151-3.263-1.937-5.049-5.2-5.2h-1.549zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+
+                    <a href="#" class="text-blue-500 hover:text-blue-400 transition-all duration-300 hover:scale-125">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
                 </div>
             </div>
+        </footer>
+    </div>
+</body>
 
-        </div>
-
-        <div class="mt-16 text-center animate-fade-in-up" style="animation-delay: 0.7s;">
-            <button class="group px-8 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all font-bold text-xs uppercase tracking-[0.2em] relative overflow-hidden">
-                <span class="relative z-10">Access Archives</span>
-                <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out"></div>
-            </button>
-        </div>
-
-      </div>
-    </main>
-
-    <footer class="w-full py-12 px-8 border-t border-white/5 bg-[#050505] relative z-20">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                 <span class="text-lg font-mono font-bold text-white">NITP <span class="text-blue-500">ROBO</span></span>
-            </div>
-            <p class="opacity-40 text-xs uppercase tracking-widest text-white">© 2026 Robotics Club NIT Patna</p>
-            <div class="flex gap-6 items-center">
-                <a href="#" class="text-pink-500 hover:text-pink-400 transition-all duration-300 hover:scale-125">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-3.77 1.762c-3.262.15-5.048 1.938-5.2 5.2v1.549c.152 3.263 1.938 5.049 5.2 5.2h1.549c3.263-.151 5.049-1.937 5.2-5.2V8.962c-.151-3.263-1.937-5.049-5.2-5.2h-1.549zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="#" class="text-blue-500 hover:text-blue-400 transition-all duration-300 hover:scale-125">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
-  </div>
- </body>
 </html>
